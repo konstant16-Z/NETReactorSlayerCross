@@ -139,7 +139,11 @@ namespace NETReactorSlayer.Core
             Console.ForegroundColor = ConsoleColor.Gray;
             Console.Write("(");
             Console.ForegroundColor = ConsoleColor.DarkCyan;
-            Console.Write("From 6.0 To 6.9");
+            // Заявленный диапазон upstream — 6.0-6.9. Проверено на практике
+            // (Development/Out/Bin, сборки Robur) ещё и 4.2: пайплайн проходит
+            // целиком, 4888 строк расшифровано на Robur.exe 16.0.62.12.
+            // Полные версии 6.x в репозитории не проверялись — образцов нет.
+            Console.Write("From 6.0 To 6.9, 4.2 verified in practice");
             Console.ForegroundColor = ConsoleColor.Gray;
             Console.Write(") ");
             Console.ForegroundColor = ConsoleColor.White;
