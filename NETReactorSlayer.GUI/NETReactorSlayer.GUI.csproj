@@ -4,8 +4,9 @@
 
   <PropertyGroup>
 
-    <TargetFrameworks>net48</TargetFrameworks>
-    <OutputPath>..\bin\$(Configuration)\</OutputPath>
+    <TargetFrameworks>net8.0-windows</TargetFrameworks>
+    <EnableWindowsTargeting>true</EnableWindowsTargeting>
+    <OutputPath>../bin/$(Configuration)/</OutputPath>
     <OutputType>WinExe</OutputType>
     <AssemblyName>NETReactorSlayer</AssemblyName>
     <ApplicationIcon>Icon.ico</ApplicationIcon>
@@ -13,9 +14,7 @@
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <UseWindowsForms>true</UseWindowsForms>
     <UseWPF>true</UseWPF>
-    <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
     <GenerateResourceUsePreserializedResources>true</GenerateResourceUsePreserializedResources>
-    <Prefer32Bit>True</Prefer32Bit>
 
   </PropertyGroup>
 
@@ -44,9 +43,7 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
-    <PackageReference Include="dnlib" Version="4.1.0" />
-    <PackageReference Include="System.Net.Http" Version="4.3.4" />
-    <PackageReference Include="System.Resources.Extensions" Version="5.0.0" />
+    <PackageReference Include="dnlib" Version="4.5.0" />
 
   </ItemGroup>
 

@@ -57,6 +57,11 @@ namespace NETReactorSlayer.Core
             if (context.Options.NoPause)
                 return;
 
+            // Без перенаправленного ввода (запуск из скрипта/пайплайна) пауза не нужна:
+            // Console.ReadKey() бросает исключение, если stdin не терминал.
+            if (Console.IsInputRedirected)
+                return;
+
             Console.WriteLine("\r\n  Press any key to exit . . .");
             Console.ReadKey();
         }

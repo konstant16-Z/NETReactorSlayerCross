@@ -16,13 +16,13 @@
 
 	<Target Name="PostBuild" AfterTargets="PostBuildEvent" Condition="'$(IsDotNet)' == 'true'">
 
-		<Delete Files="$(OutputPath)\$(TargetName).exe" ContinueOnError="WarnAndContinue" />
-		<Delete Files="$(OutputPath)\$(TargetName).exe.config" ContinueOnError="WarnAndContinue" />
-		<Delete Files="$(OutputPath)\$(TargetName).runtimeconfig.dev.json" ContinueOnError="WarnAndContinue" />
-		<Delete Files="$(OutputPath)\$(TargetName).dll" ContinueOnError="WarnAndContinue" />
-		<Delete Files="$(OutputPath)\$(TargetName).pdb" ContinueOnError="WarnAndContinue" />
-		<Delete Files="$(OutputPath)\$(TargetName).runtimeconfig.json" ContinueOnError="WarnAndContinue" />
-		<Delete Files="$(OutputPath)\$(TargetName).deps.json" ContinueOnError="WarnAndContinue" />
+		<Delete Files="$(OutputPath)/$(TargetName).exe" ContinueOnError="WarnAndContinue" />
+		<Delete Files="$(OutputPath)/$(TargetName).exe.config" ContinueOnError="WarnAndContinue" />
+		<Delete Files="$(OutputPath)/$(TargetName).runtimeconfig.dev.json" ContinueOnError="WarnAndContinue" />
+		<Delete Files="$(OutputPath)/$(TargetName).dll" ContinueOnError="WarnAndContinue" />
+		<Delete Files="$(OutputPath)/$(TargetName).pdb" ContinueOnError="WarnAndContinue" />
+		<Delete Files="$(OutputPath)/$(TargetName).runtimeconfig.json" ContinueOnError="WarnAndContinue" />
+		<Delete Files="$(OutputPath)/$(TargetName).deps.json" ContinueOnError="WarnAndContinue" />
 
 	</Target>
 
