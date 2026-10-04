@@ -34,3 +34,31 @@ NETReactorSlayer is licensed under [GPLv3](https://www.gnu.org/licenses/gpl-3.0.
 - [dnlib](https://github.com/0xd4d/dnlib)
 - [de4dot.blocks](https://github.com/de4dot/de4dot/tree/master/de4dot.blocks)
 - [Harmony](https://github.com/pardeike/Harmony)
+
+---
+
+## Сборка в этом репозитории (форк под net8.0)
+
+```bash
+dotnet build NETReactorSlayer.sln -c Release
+```
+
+Core / CLI / x64.CLI / De4dot — `net8.0`, GUI — `net8.0-windows`. mono и xbuild
+не нужны. GUI собирается из Linux, запускается на Windows.
+
+Артефакты CLI:
+
+```bash
+dotnet bin/Release/net8.0/NETReactorSlayer.CLI.dll in.exe --no-pause true
+```
+
+Флаги требуют значения: `--no-pause true`. Без `true` ключ съедает путь к файлу.
+apphost `bin/Release/net8.0/NETReactorSlayer.CLI` тоже работает, но если SDK
+не в системном каталоге, нужен `DOTNET_ROOT=$HOME/.dotnet`.
+
+`x64.CLI` — обёртка под Windows, на .NET Core бесполезна (свой `OutputPath`:
+`bin/Release/x64/net8.0/`, иначе гонка за `dnlib.dll` при параллельной сборке).
+
+Проверено на Reactor 4.2: `Robur.exe` 16.0.62.12 — 0 ошибок, 713 типов,
+6679 читаемых строковых литералов. 6.0–6.9 заявлены upstream, но на файлах
+Robur не проверялись — образцов в репозитории нет.

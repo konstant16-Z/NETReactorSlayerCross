@@ -5,7 +5,9 @@
 	<PropertyGroup>
 
 		<Platform>AnyCPU</Platform>
-		<OutputPath>..\bin\$(Configuration)\</OutputPath>
+		<!-- Свой каталог: с CLI они писали dnlib.dll в одну папку параллельно,
+		     и сборка падала с MSB3026 «Unable to find the specified file». -->
+		<OutputPath>../bin/$(Configuration)/x64/</OutputPath>
 		<OutputType>Exe</OutputType>
 
 	</PropertyGroup>
